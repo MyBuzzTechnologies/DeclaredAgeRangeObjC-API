@@ -1,0 +1,15 @@
+//
+//  SceneDelegate.h
+//  DeclaredAgeRangeObjCTestApp
+//
+//  Created by Chris Pimlott on 18/12/2025.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface SceneDelegate : UIResponder <UIWindowSceneDelegate>
+
+@property (strong, nonatomic) UIWindow * window;
+
+@end
+
