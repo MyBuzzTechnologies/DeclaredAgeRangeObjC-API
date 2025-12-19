@@ -4,10 +4,6 @@
 <dict>
 	<key>files</key>
 	<dict>
-		<key>.DS_Store</key>
-		<data>
-		Ng2lnf1v+X2sIaHJ+NatsGInSTs=
-		</data>
 		<key>Headers/DeclaredAgeRangeObjC-Swift.h</key>
 		<data>
 		D6smZyS0uKz6VXhaT/8VyaltmJY=
@@ -18,15 +14,15 @@
 		</data>
 		<key>Headers/DeclaredAgeRangeObjCWrapper.h</key>
 		<data>
-		wfzI7qsJWs6kKuu9fkA60hGikfI=
+		KeHUcB5KhLOBX+anKfylUlk0C0Q=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		Uy5EE7v5ZRM+Erq+gE6amOQ5ZFY=
+		0Apxhn1GMpEUDIGCJ2mLyUeYnUs=
 		</data>
 		<key>Modules/DeclaredAgeRangeObjC.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		BA0JFBDhPC7dUF9VQWEcuuzNQzU=
+		lSyul8I1Ubx3hWOqQIXGJ+Odw6o=
 		</data>
 		<key>Modules/DeclaredAgeRangeObjC.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
@@ -34,11 +30,11 @@
 		</data>
 		<key>Modules/DeclaredAgeRangeObjC.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		FaCMRQ/vpX8/xeRCy6vz+Q24WFs=
+		cVMMLv+rKF1C0QxsW0UIl3EmR2U=
 		</data>
 		<key>Modules/DeclaredAgeRangeObjC.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		bulmzYTrnnXAmYr7969V6iIdgEM=
+		kD4CJyWJJwvDu9remJapHOPE9fw=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -65,14 +61,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			PhgJFV7aFonAUogoNM1wmM2V8crsvGgP/ntyIHDcoF0=
+			07TkA0aDL7iDPgYqqC7blcLdcwWpPiFtz2xNnxUBSgU=
 			</data>
 		</dict>
 		<key>Modules/DeclaredAgeRangeObjC.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			71eNm7yr5Fm3Qh+maZy2Rpo/p7Ejnwu4Swq46RkGz6M=
+			NPB4KPVAmQvjNu+DRHWb89n3U/LUwMtZAtPHwAe2VOo=
 			</data>
 		</dict>
 		<key>Modules/DeclaredAgeRangeObjC.swiftmodule/arm64-apple-ios.abi.json</key>
@@ -86,14 +82,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			m6YgMr4w4+CI6da1xwBfRvQiLO8phK4Yom0e3FIATn8=
+			SojbF2SZH6CWVNV8+fJuvki7Xu5N1orjhRQlU60Kcx0=
 			</data>
 		</dict>
 		<key>Modules/DeclaredAgeRangeObjC.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HAXZMyVetRX1uaC1nFmTjfvxWmTpZGiJSKYC1wBC9O0=
+			kM2Sv4os09yBjRlG0eK+pdwRu1/UJGoeh56sSLdyc34=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

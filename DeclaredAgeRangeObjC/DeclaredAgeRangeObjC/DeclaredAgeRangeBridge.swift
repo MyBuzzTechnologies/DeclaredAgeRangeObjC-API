@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import DeclaredAgeRange
+import os.log
 
 @available(iOS 26.0, *)
 @objcMembers
@@ -92,7 +93,10 @@ public final class DeclaredAgeRangeBridge: NSObject {
     public static func fetchAgeRange(minimumAge: Int, maximumAge: Int = 0, vc: UIViewController, completion: @Sendable @escaping (DeclaredAgeRangeResponse?, NSError?) -> Void) {
         #if canImport(DeclaredAgeRange)
         Task {
+            let appLog = OSLog(subsystem: Bundle.main.bundleIdentifier!, category: "fetchAgeRange")
             do {
+                os_log("Running fetchAgeRange(%ld, %ld)", log: appLog, type: .info, minimumAge, maximumAge)
+                
                 let minAge = minimumAge
                 var maxAge = maximumAge
                 
@@ -104,8 +108,15 @@ public final class DeclaredAgeRangeBridge: NSObject {
                 let response = try await AgeRangeService.shared.requestAgeRange(ageGates: minAge, maxAge, in: vc)
                 let darResponse = DeclaredAgeRangeResponse.fromDARResponse(response)
                 
+                os_log("fetchAgeRange: responded %ld", log: appLog, type: .info, darResponse.resultCode)
+                
                 if #available(iOS 26.2, *) {
                     darResponse.isEligibleForAgeFeatures = try await AgeRangeService.shared.isEligibleForAgeFeatures
+                    if (darResponse.isEligibleForAgeFeatures) {
+                        os_log("fetchAgeRange: isEligibleForAgeFeatures YES", log: appLog, type: .info)
+                    } else {
+                        os_log("fetchAgeRange: isEligibleForAgeFeatures NO", log: appLog, type: .info)
+                    }
                 }
                 
                 // Assuming result has a description or raw value
@@ -113,6 +124,7 @@ public final class DeclaredAgeRangeBridge: NSObject {
                     completion(darResponse, nil)
                 }
             } catch AgeRangeService.Error.notAvailable {
+                os_log("fetchAgeRange: NotAvailable exception", log: appLog, type: .error)
                 //The device isn’t ready (e.g., no Apple ID signed in). Handle gracefully by keeping the feature disabled.
                 let darResponse = DeclaredAgeRangeResponse()
                 darResponse.resultCode = -1
@@ -121,6 +133,7 @@ public final class DeclaredAgeRangeBridge: NSObject {
                     completion(darResponse, NSError.init(domain: "Service not available", code: darResponse.resultCode))
                 }
             } catch AgeRangeService.Error.invalidRequest {
+                os_log("fetchAgeRange: InvalidRequest exception", log: appLog, type: .error)
                 //Your code is asking for an invalid range (e.g., not at least 2 years wide)
                 let darResponse = DeclaredAgeRangeResponse()
                 darResponse.resultCode = -2
@@ -129,6 +142,8 @@ public final class DeclaredAgeRangeBridge: NSObject {
                     completion(nil, NSError.init(domain: "Invalid request", code: darResponse.resultCode))
                 }
             } catch {
+                os_log("fetchAgeRange: Exception %@", log: appLog, type: .error, (error as NSError).localizedDescription)
+                
                 DispatchQueue.main.async {
                     completion(nil, error as NSError)
                 }

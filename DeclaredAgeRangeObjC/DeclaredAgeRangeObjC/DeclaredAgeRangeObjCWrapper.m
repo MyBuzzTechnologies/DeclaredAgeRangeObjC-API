@@ -15,7 +15,7 @@
 + (void)fetchAgeRangeWithMinimumAge:(NSInteger)minimumAge
                          maximumAge:(NSInteger)maximumAge
                      viewController:(nonnull UIViewController *)vc
-                         completion:(nonnull void (^)(NSObject * _Nullable __strong, NSError * _Nullable __strong))completion {
+                         completion:(nonnull void (^)(NSObject* _Nullable __strong, NSError * _Nullable __strong))completion {
     [DeclaredAgeRangeBridge fetchAgeRangeWithMinimumAge:minimumAge maximumAge:maximumAge vc:vc completion:completion];
 }
 
