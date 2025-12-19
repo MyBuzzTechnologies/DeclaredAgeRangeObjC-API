@@ -118,7 +118,7 @@ public final class DeclaredAgeRangeBridge: NSObject {
                 darResponse.resultCode = -1
                // No age range provided.
                 DispatchQueue.main.async {
-                    completion(darResponse, NSError.init(domain: "Service not available", code: darResponse.resultCode ?? -1))
+                    completion(darResponse, NSError.init(domain: "Service not available", code: darResponse.resultCode))
                 }
             } catch AgeRangeService.Error.invalidRequest {
                 //Your code is asking for an invalid range (e.g., not at least 2 years wide)
@@ -126,7 +126,7 @@ public final class DeclaredAgeRangeBridge: NSObject {
                 darResponse.resultCode = -2
                 
                 DispatchQueue.main.async {
-                    completion(nil, NSError.init(domain: "Invalid request", code: darResponse.resultCode ?? -2))
+                    completion(nil, NSError.init(domain: "Invalid request", code: darResponse.resultCode))
                 }
             } catch {
                 DispatchQueue.main.async {
